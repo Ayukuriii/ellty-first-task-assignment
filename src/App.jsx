@@ -1,13 +1,10 @@
-import './App.css'
+import PagesCard from './PagesCard'
 
 function App() {
-
   return (
-    <>
-      <section id="center">
-        
-      </section>
-    </>
+    <main className="page-card-shell">
+      <PagesCard pageCount={6} visibleRows={4} />
+    </main>
   )
 }
 

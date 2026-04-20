@@ -15,9 +15,11 @@
   --website-color-orange-hover: #ffd84d;
 
   --website-color-checkbox-border: #cdcdcd;
-  --website-color-checkbox-checkmark-hover: #E3E3E3;
+  --website-color-checkbox-checkmark-hover: #e3e3e3;
   --website-color-checkbox-checked: #2469F6;
   --website-color-checkbox-press: #5087F8;
+  --website-color-card-border: #eeeeee;
+  --website-color-divider: #cdcdcd;
 
   --sans: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: 'Montserrat', system-ui, 'Segoe UI', Roboto, sans-serif;
@@ -67,8 +69,8 @@
 input[type='checkbox'] {
   appearance: none;
   --webkit-appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 23px;
+  height: 23px;
   border: 1px solid var(--website-color-checkbox-border);
   border-radius: 6px;
   color: var(--bg);
@@ -110,4 +112,64 @@ input[type='checkbox']:checked:active {
 input[type='checkbox']:checked {
   opacity: 1;
   background: var(--website-color-checkbox-checked);
+}
+
+.page-card-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.pages-card {
+  width: 370px;
+  min-height: 326px;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  border: 1px solid var(--website-color-card-border);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow:
+    rgba(20, 20, 20, 0.12) 0 8px 15px 0,
+    rgba(20, 20, 20, 0.1) 0 4px 4px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pages-row {
+  --page-row-height: 42px;
+  min-height: 42px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pages-list {
+  --page-row-height: 42px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(var(--page-row-height) * var(--visible-rows, 4));
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.pages-list::-webkit-scrollbar {
+  display: none;
+}
+
+.pages-divider {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid var(--website-color-divider);
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-primary-done {
+  width: 100%;
+  margin-top: 10px;
 }
