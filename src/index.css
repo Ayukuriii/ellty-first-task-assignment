@@ -183,4 +183,5 @@ input[type='checkbox']:checked {
 .button-primary-done {
   width: 100%;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
