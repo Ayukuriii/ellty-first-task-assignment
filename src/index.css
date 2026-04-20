@@ -16,8 +16,8 @@
 
   --website-color-checkbox-border: #cdcdcd;
   --website-color-checkbox-checkmark-hover: #e3e3e3;
-  --website-color-checkbox-checked: #2469F6;
-  --website-color-checkbox-press: #5087F8;
+  --website-color-checkbox-checked: #2469f6;
+  --website-color-checkbox-hover: #5087f8;
   --website-color-card-border: #eeeeee;
   --website-color-divider: #cdcdcd;
 
@@ -77,6 +77,12 @@ input[type='checkbox'] {
   background: var(--bg);
   cursor: pointer;
   opacity: 60%;
+  box-shadow: 0 0 0 0 transparent;
+  transition:
+    background-color 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease,
+    opacity 120ms ease;
 
   display: grid;
   place-items: center;
@@ -97,6 +103,10 @@ input[type='checkbox']::after {
     transform 120ms ease;
 }
 
+input[type='checkbox']:checked:hover {
+  background: var(--website-color-checkbox-hover);
+}
+
 input[type='checkbox']:hover::after,
 input[type='checkbox']:checked::after {
   opacity: 1;
@@ -106,7 +116,7 @@ input[type='checkbox']:checked::after {
 input[type='checkbox']:active,
 input[type='checkbox']:checked:active {
   opacity: 1;
-  background: var(--website-color-checkbox-press);
+  box-shadow: 0 0 0 3px rgb(36 105 246 / 10%);
 }
 
 input[type='checkbox']:checked {
@@ -143,6 +153,7 @@ input[type='checkbox']:checked {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .pages-list {
